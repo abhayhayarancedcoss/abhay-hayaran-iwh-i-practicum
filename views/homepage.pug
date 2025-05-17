@@ -1,0 +1,25 @@
+doctype html
+html(lang="en")
+head
+    title #{title}
+    link(rel="stylesheet", href="/css/style.css")
+body
+    h1 Custom Object Table
+    p
+        a(href="/update-cobj") Add to this table
+
+    if pets.length > 0
+        table
+            thead
+                tr
+                    th Name
+                    th Type
+                    th Food
+            tbody
+                each pet in pets
+                    tr
+                        td #{pet.properties.name}
+                        td #{pet.properties.type}
+                        td #{pet.properties.food}
+    else
+        p No pet records found.
